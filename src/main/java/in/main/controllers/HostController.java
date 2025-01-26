@@ -12,7 +12,7 @@ import in.main.entities.Host;
 import in.main.service.HostService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/apiHost")
 public class HostController {
 
 	@Autowired

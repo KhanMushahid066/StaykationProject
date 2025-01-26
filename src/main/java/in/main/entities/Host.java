@@ -26,13 +26,14 @@ public class Host {
 	private Long bankAccountNumber;
 	private String ifscCode;
 
-//	private String addressProof; //use img
-//	private String idProof; //use img 
-//	private Long userId;
+	private String addressProof; //use img
+	private String idProof; //use img 
+	private Long userId;
 	public Host() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	//setter getter constructor
 
 	public Host(Long hostId, String userName, String password, String emailId, String contactNumber,
 			Date acountCreateDate, String bankName, Long bankAccountNumber, String ifscCode) {

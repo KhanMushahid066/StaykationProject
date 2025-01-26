@@ -10,4 +10,7 @@ public interface PropertyService {
 	
 	void save(PropertyDTO dto , MultipartFile[] files);
 	PropertyDTO getPropertyById(Long id);
+	
+	void deletePropertyById(Long id);
+	Property updateById(PropertyDTO propertyDTO,MultipartFile[] files,Long id);
 }

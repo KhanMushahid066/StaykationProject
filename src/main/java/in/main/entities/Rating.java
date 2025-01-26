@@ -1,31 +1,30 @@
 package in.main.entities;
 
-import java.util.List;
-
-import in.main.dtos.Imagedto;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Property {
+@Entity
+public class Rating {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long ratingId;
 	private Long propertyId;
+	private Long customerId;
+	private Integer ratings;
 
-	private String propertyName;
-	private Double basePrice;
-	private String propertyType;
-	@OneToMany(mappedBy = "property", cascade = CascadeType.ALL)
-    private List<Image> images;
+	@ManyToOne
+	@JoinColumn(name = "propertyId", insertable = false, updatable = false)
+	private Property property;
+
+	// Getters and Setters
 }
-
